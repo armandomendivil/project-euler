@@ -1,16 +1,17 @@
-// First attempt
-var a = 0;
-var b = 1;
-var c = 0;
+function fibo(n) {
+  let a = 0;
+  let b = 2;
+  let temp = 0;
+  let count2 = 0;
 
-var sum = 0;
+  while(b < n) {
+    temp = b;
+    b = 4 * b + a;
+    a = temp;
+    count2++
+  }
 
-while(c < 4000000) {
-  c = a + b;
-  a = b;
-  b = c;
-
-  if (!(c % 2)) sum += c;
+  return Math.floor((a + b - 2) / 4);
 }
 
-console.log(sum);
+fibo(4000000)
